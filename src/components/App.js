@@ -15,16 +15,6 @@ class App extends Component {
       history: [],
       selectedVideo: null
     };
-
-    $.ajax({
-      url:'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=rihanna&type=video&key=' + API_KEY,
-      success: function(videos) {
-        this.setState({
-          videos:videos.items,
-          selectedVideo:videos.items[0]
-        });
-      }.bind(this)
-    });
 	}
 
   componentDidMount() {
@@ -35,6 +25,7 @@ class App extends Component {
         history: JSON.parse(localStorageRef)
       })
     }
+
   }
 
   componentDidUpdate() {
@@ -48,12 +39,13 @@ class App extends Component {
       url:'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + term + '&key=' + API_KEY,
       success: function(videos) {
         this.setState({
-          videos:videos.items,
-          selectedVideo:videos.items[0]
+          videos:videos.items
         });
       }.bind(this)
     });
 	}
+
+
 
   selectVideo = (selectedVideo, play) => {
     const stateHistory = this.state.history;
@@ -86,8 +78,9 @@ class App extends Component {
     stateHistory.splice(indexInStateHistory, 1);
     localStorage.setItem('history', JSON.stringify(stateHistory));
     this.setState({
-      history: stateHistory
-    })
+      history: stateHistory,
+      selectedVideo: null
+    });
   }
 
   render() {
