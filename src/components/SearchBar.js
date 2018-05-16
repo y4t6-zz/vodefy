@@ -14,10 +14,8 @@ class SearchBar extends React.Component {
 		this.props.videoSearch(this.state.term);
 	}
   clickedSearch = (event) => {
-
     this.setState({term: event.target.value});
     this.props.videoSearch(this.state.term);
-
   }
   onFocus = () => {
     $(this.searchResult.current).css('display', 'block');
