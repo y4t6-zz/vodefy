@@ -3,7 +3,8 @@ import React from "react";
 class ResultItem extends React.Component {
   render() {
     const video = this.props.video;
-  	const imageUrl = video.snippet.thumbnails.default.url;
+
+    const imageUrl = video.snippet.thumbnails.default.url;
 
     return (
       <li className="c-resultItem">

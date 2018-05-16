@@ -111,3 +111,53 @@ body {
 .c-resultItem__thumbnail {
   width: 150px;
 }
+
+.c-notFound {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.c-notFound h2 {
+	margin: 0;
+	font-size: 150px;
+font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+.c-pageSaver {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  animation: colorchange 10s infinite; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 1s infinite; /* Chrome and Safari */
+}
+.c-pageSaver__info {
+	text-align: center;
+}
+.c-pageSaver h1 {
+	font-size: 50px;
+}
+.c-pageSaver__infoButton {
+	color: white;
+	padding: 10px 30px;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	border: 2px solid white;
+}
+@keyframes colorchange
+	{
+		0%   {background: #069de2;}
+		50% {background: #7dc8ff;}
+		100%   {background: #069de2;}
+	}
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+	{
+		0%   {background: red;}
+		25%  {background: yellow;}
+		50%  {background: blue;}
+		75%  {background: green;}
+		100% {background: red;}
+	}
